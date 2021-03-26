@@ -44,8 +44,7 @@ compileJava {
 def mainClassName = "de.ellpeck.rockbottom.Main"
 
 task runServer(type: JavaExec) {
-    classpath = sourceSets.main.runtimeClasspath + fileTree("./gamedata")
-    args = ["--unpackedModsDir", "./build/classes/java/main", "--server"]
+    args = ["--unpackedModsDir", "./build/classes/java/main", "--server", "--gameDir", "./RockBottom"]
     if ( project.hasProperty("additionalArgs") ) {
         args += Eval.me(additionalArgs)
     }
@@ -53,8 +52,7 @@ task runServer(type: JavaExec) {
 }
 
 task runClient(type: JavaExec) {
-    classpath = sourceSets.main.runtimeClasspath + fileTree("./gamedata")
-    args = ["--unpackedModsDir", "./build/classes/java/main"]
+    args = ["--unpackedModsDir", "./build/classes/java/main", "--gameDir", "./RockBottom"]
     if ( project.hasProperty("additionalArgs") ) {
         args += Eval.me(additionalArgs)
     }
