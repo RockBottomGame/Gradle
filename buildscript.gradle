@@ -4,7 +4,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
-sourceCompatibility = targetCompatibility = 1.8
+JavaLanguageVersion.of(17)
 
 ext {
     replace = this.&replace
@@ -25,7 +25,7 @@ repositories {
         url 'https://maven.ellpeck.de'
     }
     maven {
-        url "http://clojars.org/repo/"
+        url "https://clojars.org/repo/"
     }
 }
 
